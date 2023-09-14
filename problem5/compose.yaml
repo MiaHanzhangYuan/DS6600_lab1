@@ -1,6 +1,6 @@
 services:
   jupyterlab:
-    image: problem5
+    image: miaayuan/problem5
     env_file: 
       - .env
     ports:
