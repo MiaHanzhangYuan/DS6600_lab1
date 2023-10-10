@@ -1,18 +1,18 @@
 # syntax=docker/dockerfile:1
 
-FROM ubuntu:latest
+FROM python:3.11.4-bookworm
 
 COPY requirements.txt requirements.txt
 
-RUN apt-get update
+RUN pip install --upgrade pip
 
-RUN apt-get install -y python3
+RUN pip install -r requirements.txt
 
 WORKDIR /DS6600_lab1
 
 EXPOSE 8888
 
-CMD ["python3"]
+CMD ["jupyter", "lab","--ip=0.0.0.0","--allow-root"]
 
 
 
